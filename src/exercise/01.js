@@ -3,7 +3,7 @@
 
 import * as React from 'react'
 
-function Greeting({intialName}) {
+function Greeting({intialName = ''}) {
   const [name, setName] = React.useState(intialName)
 
   function handleChange(event) {
@@ -14,7 +14,7 @@ function Greeting({intialName}) {
     <div>
       <form>
         <label htmlFor="name">Name: </label>
-        <input onChange={handleChange} id="name" />
+        <input value={name} onChange={handleChange} id="name" />
       </form>
       {name ? <strong>Hello {name}</strong> : 'Please type your name'}
     </div>
